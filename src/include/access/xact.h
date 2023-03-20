@@ -38,7 +38,7 @@
 #define XACT_REPEATABLE_READ	2
 #define XACT_SERIALIZABLE		3
 
-extern int	DefaultXactIsoLevel;
+extern PGDLLIMPORT int DefaultXactIsoLevel;
 extern PGDLLIMPORT int XactIsoLevel;
 
 /*
@@ -52,8 +52,8 @@ extern PGDLLIMPORT int XactIsoLevel;
 #define IsolationIsSerializable() (XactIsoLevel == XACT_SERIALIZABLE)
 
 /* Xact read-only state */
-extern bool DefaultXactReadOnly;
-extern bool XactReadOnly;
+extern PGDLLIMPORT bool DefaultXactReadOnly;
+extern PGDLLIMPORT bool XactReadOnly;
 
 /* flag for logging statements in this transaction */
 extern bool xact_is_sampled;
@@ -479,7 +479,7 @@ extern bool IsTransactionBlockActive(void);
 extern void RollbackAndReleaseSavepoint(const char *name);
 
 /* Nested transaction count */
-extern uint32 NestedTranCount;
-extern bool AbortCurTransaction;
+extern PGDLLIMPORT uint32 NestedTranCount;
+extern PGDLLIMPORT bool AbortCurTransaction;
 
 #endif							/* XACT_H */

@@ -100,6 +100,7 @@ pg_bswap64(uint64 x)
 }
 #endif							/* HAVE__BUILTIN_BSWAP64 */
 
+/*
 union num128as32
 {
 	uint128 v;
@@ -120,7 +121,6 @@ pg_bswap128(uint128 num)
 	return u2.v;
 }
 
-/*
  * Portable and fast equivalents for ntohs, ntohl, htons, htonl,
  * additionally extended to 64 bits.
  */
@@ -141,12 +141,12 @@ pg_bswap128(uint128 num)
 #define pg_hton16(x)		pg_bswap16(x)
 #define pg_hton32(x)		pg_bswap32(x)
 #define pg_hton64(x)		pg_bswap64(x)
-#define pg_hton128(x)		pg_bswap128(x)
+//#define pg_hton128(x)		pg_bswap128(x)
 
 #define pg_ntoh16(x)		pg_bswap16(x)
 #define pg_ntoh32(x)		pg_bswap32(x)
 #define pg_ntoh64(x)		pg_bswap64(x)
-#define pg_ntoh128(x)		pg_bswap128(x)
+//#define pg_ntoh128(x)		pg_bswap128(x)
 
 #endif							/* WORDS_BIGENDIAN */
 

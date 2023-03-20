@@ -53,11 +53,11 @@ typedef struct PgXmlErrorContext PgXmlErrorContext;
 #define PG_GETARG_XML_P(n)	DatumGetXmlP(PG_GETARG_DATUM(n))
 #define PG_RETURN_XML_P(x)	PG_RETURN_POINTER(x)
 
-extern void pg_xml_init_library(void);
-extern PgXmlErrorContext *pg_xml_init(PgXmlStrictness strictness);
-extern void pg_xml_done(PgXmlErrorContext *errcxt, bool isError);
+extern PGDLLIMPORT void pg_xml_init_library(void);
+extern PGDLLIMPORT PgXmlErrorContext *pg_xml_init(PgXmlStrictness strictness);
+extern PGDLLIMPORT void pg_xml_done(PgXmlErrorContext *errcxt, bool isError);
 extern bool pg_xml_error_occurred(PgXmlErrorContext *errcxt);
-extern void xml_ereport(PgXmlErrorContext *errcxt, int level, int sqlcode,
+extern PGDLLIMPORT void xml_ereport(PgXmlErrorContext *errcxt, int level, int sqlcode,
 						const char *msg);
 
 extern xmltype *xmlconcat(List *args);

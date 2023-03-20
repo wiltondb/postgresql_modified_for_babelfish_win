@@ -21,8 +21,8 @@ our $config = {
 	perl      => undef,    # --with-perl=<path>
 	python    => undef,    # --with-python=<path>
 	openssl   => undef,    # --with-ssl=openssl with <path>
-	uuid      => undef,    # --with-uuid=<path>
-	xml       => undef,    # --with-libxml=<path>
+	uuid      => "C:/projects/postgres/libuuid_win/build/dist/",    # --with-uuid=<path>
+	xml       => "C:/projects/postgres/libxml2/dist/",    # --with-libxml=<path>
 	xslt      => undef,    # --with-libxslt=<path>
 	iconv     => undef,    # (not in configure, path to iconv)
 	zlib      => undef     # --with-zlib=<path>

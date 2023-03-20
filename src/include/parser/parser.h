@@ -87,10 +87,10 @@ typedef enum
 extern int	backslash_quote;
 extern bool escape_string_warning;
 extern PGDLLIMPORT bool standard_conforming_strings;
-extern int sql_dialect;
-extern bool pltsql_case_insensitive_identifiers;
+extern PGDLLIMPORT int sql_dialect;
+extern PGDLLIMPORT bool pltsql_case_insensitive_identifiers;
 
-extern char* pltsql_server_collation_name;
+extern PGDLLIMPORT char* pltsql_server_collation_name;
 
 /* Primary entry point for the raw parsing functions */
 extern List *raw_parser(const char *str, RawParseMode mode);

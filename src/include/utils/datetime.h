@@ -259,7 +259,7 @@ do { \
 
 extern const char *const months[];	/* months (3-char abbreviations) */
 extern const char *const days[];	/* days (full names) */
-extern const int day_tab[2][13];
+extern const PGDLLIMPORT int day_tab[2][13];
 
 /*
  * These are the rules for the Gregorian calendar, which was adopted in 1582.

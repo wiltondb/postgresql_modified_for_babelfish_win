@@ -523,7 +523,7 @@ sub GenerateFiles
 
 	if ($self->{options}->{uuid})
 	{
-		$define{HAVE_UUID_OSSP} = 1;
+		$define{HAVE_UUID_E2FS} = 1;
 		$define{HAVE_UUID_H}    = 1;
 	}
 	if ($self->{options}->{xml})
@@ -1087,7 +1087,8 @@ sub AddProject
 	if ($self->{options}->{uuid})
 	{
 		$proj->AddIncludeDir($self->{options}->{uuid} . '\include');
-		$proj->AddLibrary($self->{options}->{uuid} . '\lib\uuid.lib');
+		$proj->AddLibrary($self->{options}->{uuid} . '\lib\uuid_win.lib');
+		$proj->AddLibrary('rpcrt4.lib');
 	}
 	return $proj;
 }

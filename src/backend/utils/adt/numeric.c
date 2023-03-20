@@ -5949,8 +5949,8 @@ bigint_poly_sum(PG_FUNCTION_ARGS)
 			ereport(ERROR,
 					(errcode(ERRCODE_NUMERIC_VALUE_OUT_OF_RANGE),
 					errmsg("Arithmetic overflow error converting expression to data type bigint.")));
-		else
-			PG_RETURN_INT64(result);
+		
+		PG_RETURN_INT64(result);
 
 	#endif
 }

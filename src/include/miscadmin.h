@@ -338,7 +338,7 @@ typedef enum BackendType
 	B_LOGGER,
 } BackendType;
 
-extern BackendType MyBackendType;
+extern PGDLLIMPORT BackendType MyBackendType;
 
 extern const char *GetBackendTypeDesc(BackendType backendType);
 
@@ -401,7 +401,7 @@ typedef enum ProcessingMode
 	NormalProcessing			/* normal processing */
 } ProcessingMode;
 
-extern ProcessingMode Mode;
+extern PGDLLIMPORT ProcessingMode Mode;
 
 #define IsBootstrapProcessingMode() (Mode == BootstrapProcessing)
 #define IsInitProcessingMode()		(Mode == InitProcessing)
