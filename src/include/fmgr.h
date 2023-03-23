@@ -423,6 +423,16 @@ CppConcat(pg_finfo_,funcname) (void) \
 } \
 extern int no_such_variable
 
+#define PG_FUNCTION_INFO_V1_DLLEXPORT(funcname) \
+extern PGDLLEXPORT Datum funcname(PG_FUNCTION_ARGS); \
+extern PGDLLEXPORT const Pg_finfo_record * CppConcat(pg_finfo_,funcname)(void); \
+const Pg_finfo_record * \
+CppConcat(pg_finfo_,funcname) (void) \
+{ \
+	static const Pg_finfo_record my_finfo = { 1 }; \
+	return &my_finfo; \
+} \
+extern int no_such_variable
 
 /*-------------------------------------------------------------------------
  *		Support for verifying backend compatibility of loaded modules

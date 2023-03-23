@@ -13,7 +13,7 @@ our $config = {
 	ldap      => 1,        # --with-ldap
 	extraver  => undef,    # --with-extra-version=<string>
 	gss       => undef,    # --with-gssapi=<path>
-	icu       => undef,    # --with-icu=<path>
+	icu       => "C:/projects/postgres/icu_bin",    # --with-icu=<path>
 	lz4       => undef,    # --with-lz4=<path>
 	nls       => undef,    # --enable-nls=<path>
 	tap_tests => undef,    # --enable-tap-tests
