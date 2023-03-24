@@ -146,9 +146,11 @@ static void check_escape_warning(core_yyscan_t yyscanner);
 extern int	core_yyget_column(yyscan_t yyscanner);
 extern void core_yyset_column(int column_no, yyscan_t yyscanner);
 
+#ifndef BABEL_TMP
 /* T-SQL specific variables widely used in backend code */
 int sql_dialect = SQL_DIALECT_PG;
 bool pltsql_case_insensitive_identifiers = true;
+#endif
 
 /* Some extensions, e.g., Babelfish,
  * may include original PG lexer in addition to their own lexer.
