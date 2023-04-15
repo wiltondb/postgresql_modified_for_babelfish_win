@@ -752,6 +752,12 @@ sub CopyDepSharedLibs
 			'OpenSSL', $target . '/bin/', $openssl_bin . '/',
 			'libcrypto-3-x64.dll', 'libssl-3-x64.dll');
 	}
+	if ($config->{uuid}) {
+		my $uuid_bin = catfile($config->{uuid}, "bin");
+		CopyFiles(
+			'libuuid', $target . '/bin/', $uuid_bin . '/',
+			'uuid_win.dll');
+	}
 	if ($config->{xml}) {
 		my $xml_bin = catfile($config->{xml}, "bin");
 		my $libxmld = catfile($xml_bin, "libxml2d.dll");
